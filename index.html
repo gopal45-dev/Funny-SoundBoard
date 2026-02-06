@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Modern Soundboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="page-wrap">
+    <div class="card">
+      <header class="card-head">
+        <h1>🎧 Modern Soundboard</h1>
+        <p class="sub">Click a bar or press keys — D C P L B H. Space to pause/resume.</p>
+      </header>
+
+      <main class="card-body">
+        <section class="left">
+          <div class="board" id="board">
+            <button class="btn" data-sound="dog" data-key="D">🐶 Dog <span class="key">D</span></button>
+            <button class="btn" data-sound="clap" data-key="C">👏 Clap <span class="key">C</span></butto>
+            <button class="btn" data-sound="pop" data-key="P">💥 Pop <span class="key">P</span></button>
+            <button class="btn" data-sound="laugh" data-key="L">😂 Laugh <span class="key">L</span></button>
+            <button class="btn" data-sound="bell" data-key="B">🔔 Bell <span class="key">B</span></button>
+            <button class="btn" data-sound="horn" data-key="H">🚗 Horn <span class="key">H</span></button>
+          </div>
+        </section>
+
+        <aside class="right">
+          <div class="controls">
+            <div class="volume-row">
+              <label class="vol-label">🔊</label>
+              <input id="volume" type="range" min="0" max="1" step="0.01" value="1" />
+              <button id="muteBtn">🔇</button>
+            </div>
+
+            <div class="visual-card">
+              <canvas id="wave"></canvas>
+              <div class="time-row">
+                <div id="current">0:00</div>
+                <div id="duration">0:00</div>
+              </div>
+              <div id="progressWrap">
+                <div id="progress"></div>
+              </div>
+              <div class="hint">Waveform & progress</div>
+            </div>
+
+          </div>
+        </aside>
+      </main>
+
+      <footer class="card-foot">
+        <small>College project • Responsive • Keyboard: D C P L B H</small>
+      </footer>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

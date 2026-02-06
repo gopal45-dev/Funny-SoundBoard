@@ -1,0 +1,216 @@
+:root{
+  --royal: royalblue;
+  --deep: #0b2545;
+  --card-bg: rgba(255,255,255,0.06);
+  --accent: #6fb7ff;
+  --accent-2: #3fa3ff;
+  --glass: rgba(255,255,255,0.08);
+  --text: #ffffff;
+}
+
+/* Page background animate */
+html,body {
+  height: 100%;
+  margin: 0;
+}
+body {
+  font-family: Inter, Arial, system-ui, sans-serif;
+  color: var(--text);
+  background: var(--royal);
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  animation: bgFade 12s ease-in-out infinite;
+  -webkit-font-smoothing:antialiased;
+}
+
+@keyframes bgFade {
+  0% { background: var(--royal); }
+  50% { background: var(--deep); }
+  100% { background: var(--royal); }
+}
+
+/* page wrapper to center card */
+.page-wrap {
+  width: 100%;
+  padding: 28px;
+  box-sizing: border-box;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  min-height:100vh;
+}
+
+/* card (the "box" like GitHub demo) */
+.card {
+  width: 100%;
+  max-width: 1100px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border-radius: 14px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.45);
+  padding: 20px;
+  box-sizing: border-box;
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+/* header */
+.card-head {
+  text-align: center;
+  margin-bottom: 10px;
+}
+.card-head h1 {
+  margin: 8px 0 4px;
+  font-size: 22px;
+  letter-spacing: 0.2px;
+}
+.card-head .sub {
+  margin:0;
+  font-size: 13px;
+  opacity: 0.9;
+}
+
+/* layout */
+.card-body {
+  display: flex;
+  gap: 22px;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+/* left: buttons column */
+.left {
+  flex: 0 0 320px;
+}
+.board {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  width: 100%;
+}
+
+/* big wide & long buttons */
+.btn {
+  position: relative;
+  width: 100%;
+  height: 78px;
+  padding: 16px 18px;
+  font-size: 18px;
+  text-align: left;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  border: none;
+  color: #022034;
+  font-weight: 600;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 10px 18px rgba(0,0,0,0.28);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: transform .12s ease, box-shadow .12s ease;
+}
+.btn .key {
+  opacity: 0.9;
+  font-size: 13px;
+  color: rgba(255,255,255,0.95);
+  background: rgba(255,255,255,0.12);
+  padding: 6px 8px;
+  border-radius: 8px;
+  margin-left: 12px;
+}
+.btn:hover { transform: translateX(6px); box-shadow: 0 14px 22px rgba(0,0,0,0.32); }
+
+/* right controls */
+.right {
+  flex: 1 1 auto;
+  min-width: 280px;
+  display:flex;
+  align-items:flex-start;
+  justify-content:flex-end;
+}
+.controls {
+  width: 100%;
+  max-width: 420px;
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 14px;
+  box-sizing: border-box;
+  border: 1px solid rgba(255,255,255,0.04);
+  backdrop-filter: blur(6px);
+}
+
+/* volume row */
+.volume-row {
+  display:flex;
+  align-items:center;
+  gap:12px;
+  margin-bottom: 12px;
+}
+.volume-row input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 6px;
+  border-radius: 6px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  width: 100%;
+}
+.volume-row input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 14px; height:14px; border-radius:50%;
+  background: white; cursor: pointer; box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+.volume-row label { font-size: 18px; }
+
+/* visual card */
+.visual-card {
+  margin-top: 6px;
+}
+#wave {
+  width: 100%;
+  height: 120px;
+  display:block;
+  border-radius: 8px;
+  background: linear-gradient(180deg, rgba(0,0,0,0.18), rgba(0,0,0,0.25));
+  border: 1px solid rgba(255,255,255,0.03);
+}
+
+/* time row and progress */
+.time-row {
+  display:flex;
+  justify-content: space-between;
+  margin-top: 8px;
+  font-size: 14px;
+  color: rgba(255,255,255,0.95);
+}
+#progressWrap {
+  height: 8px;
+  width: 100%;
+  background: rgba(255,255,255,0.06);
+  margin-top: 10px;
+  border-radius: 6px;
+  overflow:hidden;
+  cursor: pointer;
+}
+#progress {
+  height:100%;
+  width:0%;
+  background: linear-gradient(90deg, #a8e6ff, var(--accent-2));
+}
+
+/* footer */
+.card-foot {
+  margin-top: 14px;
+  text-align: center;
+  font-size: 12px;
+  opacity: 0.95;
+}
+
+/* responsive layout */
+@media (max-width: 880px) {
+  .card-body { flex-direction: column; align-items: center; }
+  .left { flex: none; width: 100%; max-width: 420px; margin-bottom: 14px; }
+  .right { width:100%; max-width: 420px; }
+}
+@media (max-width: 420px) {
+  .btn { height: 66px; font-size:16px; }
+  #wave { height: 90px; }
+}
